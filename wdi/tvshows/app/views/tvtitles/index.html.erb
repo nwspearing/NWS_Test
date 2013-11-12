@@ -1,0 +1,68 @@
+<div id="indexcontainer">
+
+<h1> List of TV Titles </h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Type</th>
+
+	</tr>
+
+
+	<% @tvtitles.each do |tvtit|  %>
+		<tr>
+			<td><%= tvtit.name %></td>
+			<td><%= tvtit.t_episode %></td>
+			<th></th>
+			
+			<td> <%= button_to "X", { action: "destroy", id: tvtit.id}, {method: :delete, data:{confirm: "Are you damned sure???"}, :class => "button"} %> </td>
+
+		</tr>
+	<% end %>
+
+</table>
+
+<%= @hello %>
+
+
+
+
+
+<iframe id="iframeID" width="960px" height="300px"></iframe> 
+
+
+
+<%= javascript_tag do %>
+
+
+
+
+
+
+var variable = "<%= @tvtitles[0].t_episode %>";
+alert(variable);
+document.getElementById("iframeID").src=variable;
+
+setTimeout(function() { location.href=location.href;}, 10000 );
+
+
+
+<% end %>
+
+
+
+<!-- <iframe height="15%" marginheight="0px" marginwidth="0px" scrolling="no" src="menuBanner.jsp" style="border:0; padding: 0px; position:absolute;" width="960px">
+</iframe>
+<div><button data-dojo-type="dijit.form.Button" value="Reload" id="reload"  onclick="reload();">Reload</button></div> -->
+
+
+<!-- onload = "loadUrl(http://<%# @tvtitles[0].t_episode %>)"  -->
+
+
+
+
+
+
+
+</div>

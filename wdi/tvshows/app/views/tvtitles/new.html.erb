@@ -1,0 +1,33 @@
+<div id="newcontainer">
+
+	<h1> Enter a new TV Title: </h1>
+
+
+<%= form_for  @tvtitle do |tvt| %>
+<p>
+
+<%= tvt.label :name, "Name" %>
+
+<%= tvt.text_field :name %>
+
+</p>
+
+
+<p>
+
+<%= tvt.label :t_episode, "Episode Type" %>
+
+<%= tvt.text_field :t_episode %>
+
+</p>
+
+
+<p>
+<%= tvt.submit %>
+</p>
+
+
+<%end%>
+
+
+</div>
